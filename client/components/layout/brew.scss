@@ -1,0 +1,64 @@
+﻿.brew__container {
+  margin: 0 auto;
+  padding: 1em;
+  min-width: $min-width;
+  background-color: $white;
+  box-shadow: $shadow-container;
+
+  @include breakpoint(sm) {
+    max-width: $max-width;
+  }
+
+  // any md-chips
+  md-chips,
+  & .md-chips {
+    box-shadow: none;
+  }
+  md-chips {
+    .md-title {
+      padding: 0 16px;
+      text-shadow: $lightgrey3 1px 1px 0;
+      background-color: $grey2;
+    }
+  }
+
+  // bottom sticky filter
+  .sticky {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 80;
+    background-color: $white;
+    box-shadow: $shadow-box;;
+
+    md-toolbar {
+      cursor: pointer;
+    }
+
+    &.state- {
+      &closed {
+         height: 56px;// md-toolbar
+
+        .icon-open {
+          display: none;
+        }
+        .icon-close {
+          display: inline-block;
+        }
+      }
+
+      &open {
+        height: 50%;
+        min-height: 380px;
+
+        .icon-open {
+          display: inline-block;
+        }
+        .icon-close {
+          display: none;
+        }
+      }
+    }
+  }
+}

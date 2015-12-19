@@ -1,0 +1,38 @@
+.search__container {
+  md-autocomplete {
+    //background: none;
+  }
+
+  li {
+    border-bottom: 1px solid $grey;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: auto;
+    white-space: normal;
+
+    &:last-child {
+      border-bottom-width: 0;
+    }
+  }
+
+  .item {
+    &__title,
+    &__metadata {
+      display: block;
+      line-height: 2;
+    }
+  }
+}
+
+.search__button {
+  margin-top: 1px;
+
+  md-icon {
+    margin: 4px;
+  }
+
+  .brew__icon {
+    width: $icon-width-lg;
+    height: $icon-height-lg;
+  }
+}

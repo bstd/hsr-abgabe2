@@ -1,0 +1,34 @@
+﻿.brew__icon {
+  width: $icon-width;
+  height: $icon-height;
+
+  @include breakpoint(sm) {
+    width: $icon-width-sm;
+    height: $icon-height-sm;
+  }
+  @include breakpoint(md) {
+    width: $icon-width-md;
+    height: $icon-height-md;
+  }
+  @include breakpoint(lg) {
+    width: $icon-width-lg;
+    height: $icon-height-lg;
+  }
+
+  &--align {
+    margin-top: -0.25em;
+
+    &.brew__icon--onchip {
+      color: $darkgrey;
+    }
+  }
+
+  &--txt {
+    padding-left: 1em;
+  }
+
+  .md-fab & {
+    width: $icon-width-sm;
+    height: $icon-height-sm;
+  }
+}

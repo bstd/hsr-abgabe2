@@ -1,0 +1,39 @@
+﻿.brew__orders {
+  &--client {
+    md-toolbar {
+      cursor: pointer;
+    }
+
+    .state- {
+      &closed {
+        .icon-open {
+          display: inline-block;
+        }
+        .icon-close {
+          display: none;
+        }
+      }
+
+      &open {
+        .icon-open {
+          display: none;
+        }
+        .icon-close {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &-card {
+    margin-top: 2em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &-state {
+    background-color: $blue;
+  }
+}

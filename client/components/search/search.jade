@@ -1,0 +1,37 @@
+- var txtSearch = 'Suchen';
+
+div(ng-controller='HeaderSearchCtrl as ac', layout='column', class='search__container')
+  md-content(class='md-padding')
+    form(ng-submit='search(searchForm)', name='searchForm', novalidate, class='layout-row')
+      md-autocomplete(
+        md-input-name='q'
+        md-items='item in ac.querySearch(ac.searchText)'
+        md-item-text='item.name'
+        md-menu-class='search__container'
+        md-min-length='0'
+        md-search-text='ac.searchText'
+        md-search-text-change='ac.searchTextChange(ac.searchText)'
+        md-selected-item='ac.selectedItem'
+        md-selected-item-change='ac.selectedItemChange(item)'
+        placeholder='Suchbegriff'
+        flex='auto'
+      )
+
+        md-item-template
+          span(class='item__title')
+            span
+              | {{ item.name }}
+
+          span(class='item__metadata')
+            span(class='item__metastat')
+              strong
+                | Preis:
+              | &#160;{{ item.price }}
+            // add more properties for autocomplete results here
+
+        md-not-found
+          | Keine Suchtreffer gefunden
+
+
+      md-button(type='submit', class='search__button', aria-label='#{txtSearch}', title='#{txtSearch}')
+        md-icon(md-svg-icon='search', class='brew__icon')

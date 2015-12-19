@@ -1,0 +1,24 @@
+h2.md-title
+  | Bestellung bearbeiten
+
+// STATUS CHANGEABLE
+md-content(flex, class='md-padding')
+  form(name='form', ng-submit='update(form)', novalidate)
+    md-input-container(class='md-block')
+      label
+        | Status ändern
+      md-select(name='state', ng-model='objOrderState', ng-model-options="{ trackBy: '$value.id' }", required)
+        md-select-label
+          | {{objOrderState ? objOrderState.value : 'Bestellstatus wählen'}}
+        md-option(ng-value='opt', ng-repeat='opt in orderStates')
+          | {{opt.value}}
+
+    div(layout='row', layout-align='start center')
+      md-button(type='submit', class='md-raised md-primary', ng-disabled='form.$invalid')
+        | Speichern
+      md-button(ui-sref='admin.order-list', class='md-raised')
+        | Abbrechen
+
+// REST READ-ONLY
+md-content(flex, class='md-padding')
+  include partial-order-detail-edit.jade

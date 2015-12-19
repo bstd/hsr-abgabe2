@@ -1,0 +1,48 @@
+﻿// colors
+$red: red;
+$orange: orange;
+$lightgrey1: #efefef;
+$lightgrey2: #ebebeb;
+$lightgrey3: #e0e0e0;
+$grey: #ccc;
+$grey2: #bababa;
+$darkgrey: #212121;
+$green1: lime;
+$green2: green;
+$purple: purple;
+$blue: #03a9f4;
+$white: #fff;
+$black: #000;
+
+// icon sizes
+$icon-width: 48px;
+$icon-height: 48px;
+$icon-width-sm: 36px;
+$icon-height-sm: 36px;
+$icon-width-md: 32px;
+$icon-height-md: 32px;
+$icon-width-lg: 30px;
+$icon-height-lg: 30px;
+
+// min/max content
+$min-width: 320px;
+$max-width: 960px;
+
+// breakpoint variables for media query mixin (matching angular material layout-breakpoints)
+$screen-sm-min: 600px;
+$screen-md-min: 960px;
+$screen-lg-min: 1200px;
+
+// box-shadows
+$shadow-box: 0 0 10px rgba(0,0,0,.8);
+$shadow-container: 0 0 5px 0 rgba(0,0,0,.5);
+
+// order state highlighting
+$order-state-bgColor-new: $red;
+$order-state-bgColor-open: $orange;
+$order-state-bgColor-paid: $purple;
+$order-state-bgColor-done: $green2;
+
+// toast colors
+$toast-error:  #f44336;
+$toast-success: #00e676;

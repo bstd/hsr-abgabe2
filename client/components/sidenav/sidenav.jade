@@ -1,0 +1,53 @@
+- var txtMenu = 'Menü';
+
+// in order to close sidenav when switching states containing sub-states use ng-click to toggle sidenav
+navigation(ng-controller='SidenavCtrl', layout='row', class='brew__sidenav')
+  md-sidenav(class='md-sidenav-right md-whiteframe-z2', md-component-id='right')
+    md-toolbar(class='md-theme-brown')
+      p(class='md-toolbar-tools')
+        | #{txtMenu}
+    md-content(layout-padding)
+      md-button(ng-click="toggleSidenav('right')", class='md-primary brew__sidenav-btn', aria-label='#{txtMenu} schliessen', title='#{txtMenu} schliessen')
+        md-icon(md-svg-icon='arrow_forward', class='brew__icon')
+      ul(class='brew__sidenav-items')
+        li
+          md-button(href='home', ng-class="{'active': isActive('/')}")
+            | Startseite
+        li
+          md-button(href='login', ng-hide='isLoggedIn()', ng-class="{'active': isActive('/login')}")
+            | Login
+        li
+          md-button(href='#', ng-click='logout()', ng-show='isLoggedIn()')
+            | Logout
+        li
+          md-button(href='settings', ng-show='isLoggedIn()', ng-class="{'active': isActive('/settings')}")
+            | Persönlicher Bereich
+        li
+          md-button(href='registration', ng-hide='isLoggedIn()', ng-class="{'active': isActive('/registration')}")
+            | Registrierung
+        li
+          md-button(href='admin', ng-click="toggleSidenav('right')", ng-if='isAdmin()', ng-class="{'active': isActive('/admin')}")
+            | Adminbereich
+          ul
+            li
+              md-button(href='admin/products', ng-click="toggleSidenav('right')", ng-if='isAdmin()', ng-class="{'active': isActive('/admin/products')}")
+                | Produktliste
+            li
+              md-button(href='admin/products/create', ng-click="toggleSidenav('right')", ng-if='isAdmin()', ng-class="{'active': isActive('/admin/products/create')}")
+                | Produkt erfassen
+            li
+              md-button(href='admin/orders', ng-click="toggleSidenav('right')", ng-if='isAdmin()', ng-class="{'active': isActive('/admin/orders')}")
+                | Bestellungen
+            li
+              md-button(href='admin/users', ng-click="toggleSidenav('right')", ng-if='isAdmin()', ng-class="{'active': isActive('/admin/users')}")
+                | Benutzerliste
+            li
+              md-button(href='admin/users/create', ng-click="toggleSidenav('right')", ng-if='isAdmin()', ng-class="{'active': isActive('/admin/users/create')}")
+                | Benutzer erfassen
+
+  md-content
+    div(layout='column', layout-align='top center')
+      div
+        md-button(ng-click="toggleSidenav('right')", class='md-primary', aria-label='#{txtMenu}', title='#{txtMenu}')
+          md-icon(md-svg-icon='menu', class='brew__icon')
+    div(flex)
