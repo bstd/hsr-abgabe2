@@ -38,6 +38,7 @@ $ grunt serve
 * Wenn aus versehen Bilder im "uploads" gelöscht werden, sind Ersatz im "backup" Ordner vorgesehen. Default Ordner ist für den Produktebild Platzhalter.
 * Projekt Dokumente wie Wireframes und Usability Tests sind im Ordner "project-documents" abgelegt.
 * Produkt Bilder müssen vom Admin vorher komprimiert und in einem quadratischem Format uploaded werden.
+* Mobile Filters orientieren sich am "Toggle Bottom Menu Pattern"
 * `grunt serve:dist` für Starten der minified Version (env=prod).
   * hier sind wir in den letzten Wochen auf (kurzfristig) unlösbare Probleme gestossen, da $mdDialog (angular-material) in kürzlich erschienen Versionen in minifiziertem Code ein $injector:unpr Fehler wirft.
 * `grunt serve:debug` für Starten eines "debugging-friendly environment".
